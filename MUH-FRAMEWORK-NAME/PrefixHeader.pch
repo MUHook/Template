@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  MUH-FRAMEWORK-NAME
+//
+//  Created by MUH-USER on MUH-TIME-YEAR-MONTH-DAY.
+//  Copyright © MUH-TIME-YEAR MUH-ORGANIZATION-NAME. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <MUHook/MUHook.h>
+
+#import "MUH-APP-NAME.h"
+
+#endif /* PrefixHeader_pch */
