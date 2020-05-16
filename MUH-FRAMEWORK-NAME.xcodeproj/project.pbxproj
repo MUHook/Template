@@ -36,6 +36,8 @@
 		6DD0A0C324017E4900F73A37 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6DD0A0C524017E8B00F73A37 /* MUH-APP-NAME.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUH-APP-NAME.h"; sourceTree = "<group>"; };
 		6DD0A0CE2402466B00F73A37 /* Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
+		6DEA6985247048C2000BB26A /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		6DEA6986247048E0000BB26A /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,8 @@
 		6DD0A08E24017DC700F73A37 = {
 			isa = PBXGroup;
 			children = (
+				6DEA6986247048E0000BB26A /* Library */,
+				6DEA6985247048C2000BB26A /* Resources */,
 				6DD0A09A24017DC700F73A37 /* MUH-FRAMEWORK-NAME */,
 				6DD0A0A824017DE900F73A37 /* MUH-APP-NAME */,
 				6DD0A09924017DC700F73A37 /* Products */,
