@@ -190,8 +190,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6DD0A09724017DC700F73A37 /* MUH-FRAMEWORK-NAME */,
 				6DD0A0A624017DE900F73A37 /* MUH-APP-NAME */,
+				6DD0A09724017DC700F73A37 /* MUH-FRAMEWORK-NAME */,
 			);
 		};
 /* End PBXProject section */
