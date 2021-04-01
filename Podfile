@@ -8,7 +8,7 @@ target 'MUH-APP-NAME' do
   # use_frameworks!
 
   # Pods for MUH-APP-NAME
-  pod 'LookinServer'
+  pod 'LookinServer', :configurations => ['Debug']
 
 end
 
@@ -18,6 +18,6 @@ target 'MUH-FRAMEWORK-NAME' do
 
   # Pods for MUH-FRAMEWORK-NAME
   pod 'MUHook'
-  pod 'Cycript', :path => './Library/Frameworks'
+  pod 'Cycript', :path => './Library/Frameworks', :configurations => ['Debug']
 
 end
