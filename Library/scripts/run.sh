@@ -12,13 +12,7 @@ chmod 777 "${OPTOOL}"
 
 # 提取 LookinServer
 if [[ ${CONFIGURATION} == "Debug" ]]; then
-	LOOKIN_CACHE="${TARGET_BUILD_DIR}/LookinServer.framework"
-	if [[ -d "${LOOKIN_CACHE}" ]]; then
-	echo "Found LookinServer.framework cache"
-	else
-	echo "Cache LookinServer.framework"
-	cp -r "${TARGET_APP_PATH}/Frameworks/LookinServer.framework" "${LOOKIN_CACHE}"
-	fi
+	LOOKIN_SERVER="${SRCROOT}/Library/Frameworks/LookinServer.framework"
 fi
 
 # 替换 app 文件
@@ -33,7 +27,7 @@ mkdir "${TARGET_APP_PATH}/Frameworks"
 
 # 导入 LookinServer
 if [[ ${CONFIGURATION} == "Debug" ]]; then
-	cp -r "${LOOKIN_CACHE}" "${TARGET_APP_PATH}/Frameworks/LookinServer.framework"
+	cp -r "${LOOKIN_SERVER}" "${TARGET_APP_PATH}/Frameworks/LookinServer.framework"
 	"${OPTOOL}" install -p "@executable_path/Frameworks/LookinServer.framework/LookinServer" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
 fi
 

@@ -8,7 +8,7 @@ target 'MUH-APP-NAME' do
   # use_frameworks!
 
   # Pods for MUH-APP-NAME
-  pod 'LookinServer', :configurations => ['Debug']
+  # pod 'LookinServer', :configurations => ['Debug']
 
 end
 
