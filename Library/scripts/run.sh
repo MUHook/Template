@@ -116,13 +116,19 @@ inject_LookinServer() {
 		echo "Skip"
 	fi
 }
+inject_LookinServer
 
 # 导入 AppPlugin.framework
 echo "================================================================"
 echo "【Install ${FRAMEWORK_NAME}】"
-echo "Embed $FRAMEWORK_NAME"
-cp -r "${TARGET_BUILD_DIR}/${FRAMEWORK_NAME}.framework" "${TARGET_APP_PATH}/Frameworks/${FRAMEWORK_NAME}.framework"
-"${OPTOOL}" install -p "@executable_path/Frameworks/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
+inject_plugin() {
+	local BUILD_FRAMEWORK="${TARGET_BUILD_DIR}/${FRAMEWORK_NAME}.framework"
+	local TARGET_FRAMEWORK="${TARGET_APP_PATH}/Frameworks/${FRAMEWORK_NAME}.framework"
+	echo "Embed $FRAMEWORK_NAME"
+	cp -r "${BUILD_FRAMEWORK}" "${TARGET_FRAMEWORK}"
+	"${OPTOOL}" install -p "@executable_path/Frameworks/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
+}
+inject_plugin
 
 # 重签名 Frameworks 文件夹
 echo "================================================================"
