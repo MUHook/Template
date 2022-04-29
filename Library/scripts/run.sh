@@ -59,7 +59,7 @@ echo "【Restore Symbol】"
 restore_symbol() {
 	local ORIGIN_BINARY="${SRCROOT}/Resources/Packages/${TARGET_NAME}.app/$TARGET_NAME"
 	local RESTORE_SYMBOL_LOCK="${SRCROOT}/Resources/Packages/${TARGET_NAME}.restore_symbol_lock"
-	local RESTORE_SYMBOL="${LIBRARY}/bin/restore_symbol"
+	local RESTORE_SYMBOL="${LIBRARY}/bin/restore-symbol"
 	local TEMP_BINARY="${ORIGIN_BINARY}.symbol"
 	chmod 777 $RESTORE_SYMBOL
 	if [[ ! -e $RESTORE_SYMBOL_LOCK ]]; then
@@ -119,7 +119,7 @@ inject_LookinServer() {
 
 # 导入 AppPlugin.framework
 echo "================================================================"
-echo "【Install $FRAMEWORK_NAME】"
+echo "【Install ${FRAMEWORK_NAME}】"
 echo "Embed $FRAMEWORK_NAME"
 cp -r "${TARGET_BUILD_DIR}/${FRAMEWORK_NAME}.framework" "${TARGET_APP_PATH}/Frameworks/${FRAMEWORK_NAME}.framework"
 "${OPTOOL}" install -p "@executable_path/Frameworks/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
