@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D196202281B8F2400A5988A /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = 6D196201281B8F2400A5988A /* Headers */; };
 		6DD0A09D24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD0A09B24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DD0A0B624017DEA00F73A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0A0B524017DEA00F73A37 /* Assets.xcassets */; };
 		6DD0A0B924017DEA00F73A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0A0B724017DEA00F73A37 /* LaunchScreen.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		6D04430C261618EC00188C2C /* Products */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Products; sourceTree = "<group>"; };
+		6D196201281B8F2400A5988A /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Headers; sourceTree = "<group>"; };
 		6DD0A09824017DC700F73A37 /* MUH_FRAMEWORK_NAME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MUH_FRAMEWORK_NAME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD0A09B24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUH-FRAMEWORK-NAME.h"; sourceTree = "<group>"; };
 		6DD0A09C24017DC700F73A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		6DD0A0A824017DE900F73A37 /* MUH-APP-NAME */ = {
 			isa = PBXGroup;
 			children = (
+				6D196201281B8F2400A5988A /* Headers */,
 				6DD0A0B524017DEA00F73A37 /* Assets.xcassets */,
 				6DD0A0B724017DEA00F73A37 /* LaunchScreen.storyboard */,
 				6DD0A0BA24017DEA00F73A37 /* Info.plist */,
@@ -210,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D196202281B8F2400A5988A /* Headers in Resources */,
 				6DD0A0B924017DEA00F73A37 /* LaunchScreen.storyboard in Resources */,
 				6DD0A0B624017DEA00F73A37 /* Assets.xcassets in Resources */,
 			);

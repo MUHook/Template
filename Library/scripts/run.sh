@@ -3,10 +3,10 @@
 FRAMEWORK_NAME="MUH-FRAMEWORK-NAME"
 
 # 定义变量
+LIBRARY="$SRCROOT/Library"
 TARGET_APP_PATH="${TARGET_BUILD_DIR}/${TARGET_NAME}.app"
 PROVISION_PROFILE="/Users/${USER}/Library/MobileDevice/Provisioning Profiles"
-OPTOOL="${SRCROOT}/Library/bin/optool"
-LOOKIN_SERVER="${SRCROOT}/Library/Frameworks/LookinServer.framework"
+OPTOOL="$LIBRARY/bin/optool"
 
 # 预处理指令
 echo "================================================================"
@@ -34,6 +34,24 @@ install_cycript() {
 	fi
 }
 install_cycript
+
+# 导出头文件
+echo "================================================================"
+echo "【Headers】"
+dump_header() {
+	local CLASS_DUMP="$LIBRARY/bin/class-dump"
+	local CLASS_DUMP_LOCK=${SRCROOT}/$TARGET_NAME/Headers/class-dump.lock
+	local ORIGIN_BINARY="${SRCROOT}/Resources/Packages/${TARGET_NAME}.app/$TARGET_NAME"
+	local HEADER_OUTPUT="$SRCROOT/$TARGET_NAME/Headers"
+	chmod 777 $CLASS_DUMP
+	if [[ ! -e $CLASS_DUMP_LOCK ]]; then
+		echo "Class dumping."
+		$CLASS_DUMP -H "${ORIGIN_BINARY}" -o "${HEADER_OUTPUT}" && touch $CLASS_DUMP_LOCK
+	else
+		echo "Skip"
+	fi
+}
+dump_header
 
 # 替换 app 文件
 echo "================================================================"
@@ -67,13 +85,16 @@ fi
 # 导入 LookinServer
 echo "================================================================"
 echo "【LookinServer】"
-if [[ ${CONFIGURATION} == "Debug" ]]; then
-	echo "Embed LookinServer.framework"
-	cp -r "${LOOKIN_SERVER}" "${TARGET_APP_PATH}/Frameworks/LookinServer.framework"
-	"${OPTOOL}" install -p "@executable_path/Frameworks/LookinServer.framework/LookinServer" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
-else
-	echo "Skip LookinServer.framework"
-fi
+inject_LookinServer() {
+	local LOOKIN_SERVER="$LIBRARY/Frameworks/LookinServer.framework"
+	if [[ ${CONFIGURATION} == "Debug" ]]; then
+		echo "Embed LookinServer.framework"
+		cp -r "${LOOKIN_SERVER}" "${TARGET_APP_PATH}/Frameworks/LookinServer.framework"
+		"${OPTOOL}" install -p "@executable_path/Frameworks/LookinServer.framework/LookinServer" -t "${TARGET_APP_PATH}/${TARGET_NAME}"
+	else
+		echo "Skip"
+	fi
+}
 
 # 导入 AppPlugin.framework
 echo "================================================================"
