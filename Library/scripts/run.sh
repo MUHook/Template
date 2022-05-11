@@ -20,6 +20,7 @@ install_optool() {
 		echo "This mac has installed optool"
 	fi
 }
+install_optool
 
 # 本地安装 Cycript
 echo "================================================================"
