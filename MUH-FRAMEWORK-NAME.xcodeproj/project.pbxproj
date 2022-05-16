@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D196202281B8F2400A5988A /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = 6D196201281B8F2400A5988A /* Headers */; };
+		6D248660282BBBD3004892CE /* AntiAntiDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D24865F282BBBD3004892CE /* AntiAntiDebug.m */; };
 		6DD0A09D24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD0A09B24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DD0A0B624017DEA00F73A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0A0B524017DEA00F73A37 /* Assets.xcassets */; };
 		6DD0A0B924017DEA00F73A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0A0B724017DEA00F73A37 /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		6D04430C261618EC00188C2C /* Products */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Products; sourceTree = "<group>"; };
 		6D196201281B8F2400A5988A /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Headers; sourceTree = "<group>"; };
+		6D24865F282BBBD3004892CE /* AntiAntiDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntiAntiDebug.m; sourceTree = "<group>"; };
 		6DD0A09824017DC700F73A37 /* MUH_FRAMEWORK_NAME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MUH_FRAMEWORK_NAME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD0A09B24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUH-FRAMEWORK-NAME.h"; sourceTree = "<group>"; };
 		6DD0A09C24017DC700F73A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D24865E282BBBD3004892CE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6D24865F282BBBD3004892CE /* AntiAntiDebug.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		6DD0A08E24017DC700F73A37 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		6DD0A09A24017DC700F73A37 /* MUH-FRAMEWORK-NAME */ = {
 			isa = PBXGroup;
 			children = (
+				6D24865E282BBBD3004892CE /* Library */,
 				6DD0A0C424017E8200F73A37 /* MUH-APP-NAME */,
 				6DD0A09B24017DC700F73A37 /* MUH-FRAMEWORK-NAME.h */,
 				6DD0A0C324017E4900F73A37 /* PrefixHeader.pch */,
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DD0A0D02402466B00F73A37 /* Main.m in Sources */,
+				6D248660282BBBD3004892CE /* AntiAntiDebug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
