@@ -7,6 +7,7 @@ LIBRARY="$SRCROOT/Library"
 TARGET_APP_PATH="${TARGET_BUILD_DIR}/${TARGET_NAME}.app"
 PROVISION_PROFILE="/Users/${USER}/Library/MobileDevice/Provisioning Profiles"
 OPTOOL="$LIBRARY/bin/optool"
+IPASIGNER="$LIBRARY/bin/ipasigner"
 
 # 预处理指令
 echo "================================================================"
@@ -131,14 +132,11 @@ inject_plugin() {
 }
 inject_plugin
 
-# 重签名 Frameworks 文件夹
+# 重签名 App 文件
 echo "================================================================"
 echo "【Code Sign】"
-Frameworks="${TARGET_APP_PATH}/Frameworks"
-for file in $Frameworks/*; do
-	echo "CodeSign -fs $file"
-	codesign -fs "${EXPANDED_CODE_SIGN_IDENTITY_NAME}" "$file"
-done
+chmod 777 "$IPASIGNER"
+$IPASIGNER resign -p "$EXPANDED_PROVISIONING_PROFILE" -R "${TARGET_APP_PATH}"
 
 # 打包文件
 echo "================================================================"
